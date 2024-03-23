@@ -14,8 +14,8 @@ class NoteBook:
 
     def save_file(self):
         data=[]
-        for contact in self.notebook.values():
-            data.append(self.separator.join(contact))
+        for note in self.notebook.values():
+            data.append(self.separator.join(note))
         data='\n'.join(data)
         with open(self.path,'w',encoding='UTF-8') as file:
             file.write(data)
@@ -35,9 +35,9 @@ class NoteBook:
         return result
 
 
-    def change_contact(self, c_id: int, c_contact: list[str]):
-        self.notebook[c_id]=c_contact
+    def change_note(self, c_id: int, c_note: list[str]):
+        self.notebook[c_id]=c_note
 
 
-    def delete_contact(self,c_id: int)-> list[str]:
+    def delete_note(self,c_id: int)-> list[str]:
         return self.notebook.pop(c_id)

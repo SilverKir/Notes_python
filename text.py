@@ -26,7 +26,7 @@ def new_note_added_successful(name: str) -> str:
 input_search_word="Введите слово для поиска: "
 
 def notes_not_found(word:str)-> str:
-    return f"Контакты, содержащие слово {word} не найдены"
+    return f"Заметки, содержащие слово {word} не найдены"
 
 input_id_change_contact="Введите ID заметки, который хотите изменить: "
 

@@ -9,6 +9,7 @@ def find_contact(phonebook: model.NoteBook()):
 
 def start_app():
     pb = model.NoteBook()
+
     while True:
         choice = view.main_menu()
         match choice:
@@ -30,12 +31,12 @@ def start_app():
                     find_contact(pb)
                     c_id=int(view.input_data(text.input_id_change_contact))
                     c_contact= view.add_note(text.change_contact, pb.notebook[c_id])
-                    pb.change_contact(c_id,c_contact)
+                    pb.change_note(c_id, c_contact)
                     view.print_message(text.note_changed_successful(c_contact[0]))
                 case 7:
                     find_contact(pb)
                     c_id = int(view.input_data(text.input_id_delete_contact))
-                    name= pb.delete_contact(c_id)[0]
+                    name= pb.delete_note(c_id)[0]
                     view.print_message(text.note_deleted_successful(name))
                 case 8:
                     view.print_message(text.good_bay)
