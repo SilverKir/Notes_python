@@ -14,6 +14,16 @@ def main_menu()-> int:
                 return int(choice)
             print(f"{text.main_menu_choice.replace(':','')} {text.text_from} 1 {text.text_to} {len(text.main_menu)-1}:")
 
+def save_menu() -> int:
+    for n, item in enumerate(text.save_menu):
+        if n == 0:
+            print(item)
+        else:
+            print(f"\t {n}. {item}")
+    choice = input(text.main_menu_choice)
+    if choice.isdigit() and 0 < int(choice) < len(text.save_menu):
+        return int(choice)
+
 def show_notes(note_book: dict[int,list[str]], error_message: str):
     max_size=list(map (lambda x: len(max(x,key=len)), list(zip(*note_book.values()))))
     if note_book:
